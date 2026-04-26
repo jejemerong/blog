@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 const noto = Noto_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "jeje's space",
+  title: "jejemerong.space",
   description: "jeje's space",
 };
 
