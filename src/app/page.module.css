@@ -10,6 +10,7 @@
 }
 
 .main {
+  --content-max-width: 300px;
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -24,10 +25,153 @@
   /* font-family:"pln-hyeongulim", sans-serif, */
 }
 
-.subject {
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
+}
+
+.date {
   font-size: 1.5rem;
   font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.userLevel {
+  font-size: 20px;
+}
+
+.progressWrapper {
+  --progress-yellow: #ffcc63;
+  position: relative;
+  width: min(100%, var(--content-max-width));
+  max-width: var(--content-max-width);
+  padding-top: 1.25rem;
+}
+
+.progressLabel {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  color: var(--progress-yellow);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.progressTrack {
+  width: 100%;
+  height: 18px;
+  border: 3px solid var(--progress-yellow);
+  border-radius: 36px;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--progress-yellow);
+  border-radius: 0;
+  transition: width 0.3s ease;
+}
+
+.streakRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+  width: min(100%, var(--content-max-width));
+  max-width: var(--content-max-width);
+}
+
+.streakCard {
+  flex: 1;
+  min-width: 0;
+  min-height: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 12px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.streakCardLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.streakCardValue {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.streakCardEmoji {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* iPhone */
+@media (max-width: 480px) {
+  .main {
+    --content-max-width: 260px;
+    padding: 1.5rem;
+    gap: 12px;
+  }
+
+  .progressTrack {
+    height: 14px;
+    border-width: 2px;
+    border-radius: 20px;
+  }
+
+  .streakCard {
+    min-height: 88px;
+    padding: 16px 8px;
+  }
+
+  .streakCardLabel {
+    font-size: 0.75rem;
+  }
+}
+
+/* iPad */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .main {
+    padding: 2.5rem;
+    gap: 16px;
+  }
+
+  .progressTrack {
+    height: 18px;
+    border-width: 3px;
+    border-radius: 36px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .main {
+    --content-max-width: 340px;
+  }
+
+  .progressTrack {
+    height: 22px;
+    border-width: 4px;
+    border-radius: 50px;
+  }
 }
 
 .description {
