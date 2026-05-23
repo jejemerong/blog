@@ -26,6 +26,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
+      <div className={styles.contentBox}>
       <div className={styles.hero}>
         <p className={styles.date}>
           {year2YY}.{month2MM}.{day2DD}
@@ -75,6 +76,7 @@ export default function Home() {
             {streak}
           </span>
         </div>
+      </div>
       </div>
     </main>
   );
