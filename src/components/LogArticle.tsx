@@ -28,7 +28,7 @@ function renderParagraph(content: LogParagraph, key: number) {
   return (
     <p key={key}>
       {content.parts.map((part, index) =>
-        typeof part === "string" ? part : renderLink(part, index)
+        typeof part === "string" ? part : renderLink(part, index),
       )}
     </p>
   );
@@ -39,12 +39,15 @@ type LogArticleProps = {
   showBackLink?: boolean;
 };
 
-export default function LogArticle({ post, showBackLink = true }: LogArticleProps) {
+export default function LogArticle({
+  post,
+  showBackLink = true,
+}: LogArticleProps) {
   return (
     <article className={styles.logContainer}>
       {showBackLink && (
         <p className={styles.backLink}>
-          <Link href="/log">← 목록으로</Link>
+          <Link href="/log">← 로그 목록</Link>
         </p>
       )}
 
@@ -58,7 +61,7 @@ export default function LogArticle({ post, showBackLink = true }: LogArticleProp
             <strong>{section.heading}</strong>
           </p>
           {section.paragraphs.map((paragraph, index) =>
-            renderParagraph(paragraph, index)
+            renderParagraph(paragraph, index),
           )}
           {section.steps?.map((step, index) => (
             <p key={step} className={styles.step}>

@@ -61,7 +61,8 @@
           }
         ]
       }
-    ]
+    ],
+    "thumbnail": "/images/thumbnail1.png"
   },
   {
     "slug": "log-3",
@@ -93,6 +94,7 @@
           }
         ]
       }
-    ]
+    ],
+    "thumbnail": "/images/thumbnail2.png"
   }
 ]

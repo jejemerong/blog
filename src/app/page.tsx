@@ -49,7 +49,11 @@ export default function Home() {
             {year2YY}.{month2MM}.{day2DD}
           </p>
           <Image
-            src={theme === "dark" ? "/myduck_black.png" : "/myduck.png"}
+            src={
+              theme === "dark"
+                ? "/images/myduck_black.png"
+                : "/images/myduck.png"
+            }
             alt="omo Logo"
             className={styles.omoLogo}
             width={60}

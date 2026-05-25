@@ -26,19 +26,20 @@ function getPostTextLength(post: LogPost) {
     post.sections.reduce((sectionTotal, section) => {
       const paragraphLength = section.paragraphs.reduce(
         (total, paragraph) => total + getParagraphLength(paragraph),
-        0
+        0,
       );
       const stepLength =
         section.steps?.reduce((total, step) => total + step.length, 0) ?? 0;
 
-      return sectionTotal + section.heading.length + paragraphLength + stepLength;
+      return (
+        sectionTotal + section.heading.length + paragraphLength + stepLength
+      );
     }, 0)
   );
 }
 
 function formatPostDateTime(date: string) {
-  const [, , month, day] =
-    date.match(/(\d{4})[.-](\d{2})[.-](\d{2})/) ?? [];
+  const [, , month, day] = date.match(/(\d{4})[.-](\d{2})[.-](\d{2})/) ?? [];
 
   if (month && day) return `${month}:${day}`;
 
@@ -54,7 +55,7 @@ export default function LogIndexPage() {
     <main className={styles.page}>
       <article className={styles.logContainer}>
         <p className={styles.backLink}>
-          <Link href="/">← 홈으로</Link>
+          <Link href="/">← 홈</Link>
         </p>
 
         <h1>오늘의 기록</h1>
@@ -67,7 +68,7 @@ export default function LogIndexPage() {
             const textLength = postLengths[index];
             const progressPercent = Math.max(
               10,
-              Math.round((textLength / longestPostLength) * 100)
+              Math.round((textLength / longestPostLength) * 100),
             );
 
             return (
@@ -75,7 +76,7 @@ export default function LogIndexPage() {
                 <Link href={`/log/${post.slug}`} className={styles.postCard}>
                   <span className={styles.postThumbnail}>
                     <Image
-                      src={post.thumbnail ?? "/myduck.png"}
+                      src={post.thumbnail ?? "/images/myduck.png"}
                       alt=""
                       width={96}
                       height={96}
