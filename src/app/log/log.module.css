@@ -1,0 +1,109 @@
+.page {
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.logContainer {
+  max-width: 600px;
+  margin: 16px auto;
+  padding: 8px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.logContainer h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.logContainer p {
+  margin-bottom: 0.75rem;
+}
+
+.logContainer strong {
+  font-weight: 700;
+}
+
+.logContainer a {
+  color: var(--surface-text);
+  font-weight: 700;
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+.logContainer a:hover {
+  text-decoration: underline;
+}
+
+.backLink {
+  margin-bottom: 1rem;
+}
+
+.backLink a {
+  text-decoration: none;
+  color: var(--surface-muted);
+  font-size: 0.9rem;
+}
+
+.backLink a:hover {
+  text-decoration: underline;
+}
+
+.meta {
+  color: var(--surface-muted);
+  font-size: 0.9rem;
+}
+
+.section {
+  margin-top: 1.5rem;
+}
+
+.step {
+  margin-bottom: 0.35rem;
+}
+
+.indexIntro {
+  margin-bottom: 1.5rem;
+}
+
+.postList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.postItem {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--surface-border);
+}
+
+.postItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.postLink {
+  color: var(--surface-text);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.postLink:hover {
+  text-decoration: underline;
+}
+
+.postDescription {
+  color: var(--surface-muted);
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+.postDate {
+  color: var(--surface-muted);
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
+}
