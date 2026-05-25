@@ -24,10 +24,3 @@ export type LogPost = {
   intro: string;
   sections: LogSection[];
 };
-
-export type ContentsIndex = {
-  posts: Array<{
-    slug: string;
-    file: string;
-  }>;
-};

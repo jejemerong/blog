@@ -34,7 +34,7 @@
 }
 
 .logContainer a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .backLink {
@@ -48,7 +48,7 @@
 }
 
 .backLink a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .meta {
@@ -85,9 +85,9 @@
 
 .postCard {
   display: grid;
-  grid-template-columns: 96px minmax(0, 1fr);
+  grid-template-columns: 128px minmax(0, 1fr);
   align-items: center;
-  min-height: 112px;
+  min-height: 132px;
   overflow: hidden;
   color: var(--surface-text);
   background: var(--surface-bg);
@@ -110,14 +110,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 96px;
-  height: 112px;
+  width: 128px;
+  height: 132px;
   background: #080808;
 }
 
 .postThumbnail img {
-  width: 48px;
-  height: 76px;
+  width: 54px;
+  height: 86px;
   object-fit: contain;
 }
 
@@ -125,8 +125,23 @@
   display: flex;
   min-width: 0;
   flex-direction: column;
-  gap: 0.25rem;
-  padding: 1rem 1.25rem;
+  gap: 0.75rem;
+  padding: 1rem 1.35rem;
+}
+
+.postHeader {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.postText {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
 .postLink {
@@ -135,6 +150,13 @@
   font-weight: 700;
   line-height: 1.3;
   text-decoration: none;
+}
+
+.postBadge {
+  flex: 0 0 auto;
+  color: var(--surface-muted);
+  font-size: 0.95rem;
+  line-height: 1;
 }
 
 .postLink:hover {
@@ -148,6 +170,61 @@
   margin-top: 0;
 }
 
+.playerTimeline {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+}
+
+.playerTrack {
+  position: relative;
+  display: block;
+  height: 3px;
+  overflow: hidden;
+  background: var(--surface-border);
+}
+
+.playerProgress {
+  display: block;
+  height: 100%;
+  background: var(--surface-muted);
+}
+
+.playerTime {
+  color: var(--surface-text);
+  font-size: 0.78rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.playerControls {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  width: 100%;
+  color: var(--surface-text);
+}
+
+.playerIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: 18px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.playerIcon:first-child,
+.playerIcon:last-child {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
 .postDate {
   color: var(--surface-muted);
   font-size: 0.85rem;
@@ -156,21 +233,49 @@
 
 @media (max-width: 480px) {
   .postCard {
-    grid-template-columns: 84px minmax(0, 1fr);
-    min-height: 96px;
+    grid-template-columns: 104px minmax(0, 1fr);
+    min-height: 116px;
   }
 
   .postThumbnail {
-    width: 84px;
-    height: 96px;
+    width: 92px;
+    height: 92px;
+    aspect-ratio: 1 / 1;
+    margin-left: 12px;
   }
 
   .postThumbnail img {
     width: 42px;
-    height: 66px;
+    height: 68px;
   }
 
   .postContent {
+    gap: 0.6rem;
     padding: 0.85rem 1rem;
+  }
+
+  .postHeader {
+    gap: 0.65rem;
+  }
+
+  .postLink {
+    font-size: 0.98rem;
+  }
+
+  .postDescription {
+    font-size: 0.85rem;
+  }
+
+  .playerTimeline {
+    gap: 0.6rem;
+  }
+
+  .playerIcon {
+    font-size: 0.78rem;
+  }
+
+  .playerIcon:first-child,
+  .playerIcon:last-child {
+    font-size: 1.05rem;
   }
 }
