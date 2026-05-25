@@ -19,6 +19,7 @@ export type LogPost = {
   slug: string;
   title: string;
   description: string;
+  thumbnail?: string;
   date: string;
   intro: string;
   sections: LogSection[];

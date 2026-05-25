@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "@/content/getPosts";
 import styles from "./log.module.css";
@@ -26,8 +27,21 @@ export default function LogIndexPage() {
         <ul className={styles.postList}>
           {posts.map((post) => (
             <li key={post.slug} className={styles.postItem}>
-              <Link href={`/log/${post.slug}`} className={styles.postLink}>
-                {post.title}
+              <Link href={`/log/${post.slug}`} className={styles.postCard}>
+                <span className={styles.postThumbnail}>
+                  <Image
+                    src={post.thumbnail ?? "/myduck.png"}
+                    alt=""
+                    width={96}
+                    height={96}
+                  />
+                </span>
+                <span className={styles.postContent}>
+                  <span className={styles.postLink}>{post.title}</span>
+                  <span className={styles.postDescription}>
+                    {post.description}
+                  </span>
+                </span>
               </Link>
             </li>
           ))}
